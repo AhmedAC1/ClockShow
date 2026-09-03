@@ -34,7 +34,7 @@
       form.addEventListener("submit", async (event) => {
         event.preventDefault();
 
-        if (form.children[0].value === 0) { return; }
+        if (form.children[0].value === "0") { return; }
         if (theClockIsActive) { return; }
         theClockIsActive = true;
         div.textContent = String(form.children[0].value);
