@@ -16,12 +16,21 @@
     <form id="form">
       <input type="number">
     </form>
+    <button id="reset">Reset clockshow</button>
+    <br>
     <div id="div" style="color: #ffffff">0</div>
     <script>
       const form = document.getElementById("form");
       const div = document.getElementById("div");
+      const reset = document.getElementById("reset");
       let theClockIsActive = false;
 
+      reset.addEventListener("click", () => {
+        if (!theClockIsActive) { return; }
+        form.children[0].value = "";
+        div.textContent = "0";
+        theClockIsActive = false;
+      });
       form.addEventListener("submit", async (event) => {
         event.preventDefault();
 
