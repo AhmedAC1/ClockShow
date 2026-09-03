@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <style>
+      body {
+        background-color: #000000;
+        font-family: sans-serif;
+      }
+    </style>
+    <title>ClockShow</title>
+  </head>
+  <body>
+    <h1 style="color: #ffffff">ClockShow</h1>
+    <div style="color: #ffffff">Enter your clockshow below.</div>
+    <form id="form">
+      <input type="number">
+    </form>
+    <div id="div" style="color: #ffffff">0</div>
+    <script>
+      const form = document.getElementById("form");
+      const div = document.getElementById("div");
+      let theClockIsActive = false;
+
+      form.addEventListener("submit", async (event) => {
+        event.preventDefault();
+
+        if (theClockIsActive) { return; }
+        theClockIsActive = true;
+        div.textContent = String(form.children[0].value);
+        for (let i = form.children[0].value; i > -1; i--) {
+          if (i === 0) {
+            div.textContent = "CLOCKSHOW COMPLETED!!!!! 🎉🎉🎉🎉🎉🎉🎉";
+            await new Promise(clock => setTimeout(clock, 2000));
+            div.textContent = 0;
+            theClockIsActive = false;
+            break;
+          }
+          div.textContent = String(i);
+          await new Promise(clock => setTimeout(clock, 1000));
+        }
+      });
+    </script>
+  </body>
+</html>
