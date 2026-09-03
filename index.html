@@ -12,6 +12,7 @@
   </head>
   <body>
     <h1 style="color: #ffffff">ClockShow</h1>
+    <h2 style="color: #ffffff">Your timer. Your life.</h2>
     <div style="color: #ffffff">Enter your clockshow below.</div>
     <form id="form">
       <input type="number">
@@ -34,7 +35,7 @@
       form.addEventListener("submit", async (event) => {
         event.preventDefault();
 
-        if (form.children[0].value === "0") { return; }
+        if (form.children[0].value.includes(["0", ""])) { return; }
         if (theClockIsActive) { return; }
         theClockIsActive = true;
         div.textContent = String(form.children[0].value);
