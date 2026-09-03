@@ -8,7 +8,7 @@
       }
     </style>
     <title>ClockShow</title>
-    <link rel="icon" type="image/png" href="src/icons/icon-512">
+    <link rel="icon" type="image/png" href="src/icons/icon-512.png">
   </head>
   <body>
     <h1 style="color: #ffffff">ClockShow</h1>
@@ -38,6 +38,7 @@
         theClockIsActive = true;
         div.textContent = String(form.children[0].value);
         for (let i = form.children[0].value; i > -1; i--) {
+          if (!theClockIsActive) { break; }
           if (i === 0) {
             div.textContent = "CLOCKSHOW COMPLETED!!!!! 🎉🎉🎉🎉🎉🎉🎉";
             await new Promise(clock => setTimeout(clock, 2000));
