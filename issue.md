@@ -1,4 +1,4 @@
-`South Korea @.1`
+`South Korea @.{Number {issueIndex}}`
 
 # The issue
 > [!NOTE]
